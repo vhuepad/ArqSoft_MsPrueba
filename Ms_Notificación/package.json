@@ -1,0 +1,27 @@
+{
+  "name": "ms_notification",
+  "version": "1.0.0",
+  "description": "\"In this repository are attached all the files related to the microservice notification.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dayscool/ms_notification.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dayscool/ms_notification/issues"
+  },
+  "homepage": "https://github.com/Dayscool/ms_notification#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
