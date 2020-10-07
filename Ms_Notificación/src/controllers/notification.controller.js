@@ -3,7 +3,7 @@ const Message = require( '../models/Message' );
 
 const notificationCtrl = { };
 
-notificationCtrl.addMessage = async ( req, res, next) => {
+notificationCtrl.createMessage = async ( req, res, next) => {
     try{
         const { userId, senderId, texto} = req.body;
         if ( !userId || !senderId || !texto)
@@ -25,7 +25,7 @@ notificationCtrl.addMessage = async ( req, res, next) => {
     }
 };
 
-notificationCtrl.addNotification = async ( req, res ) => {
+notificationCtrl.createNotification = async ( req, res ) => {
     try{
         const { userId, messageId } = req.body;
         console.log(req.body);
@@ -50,7 +50,7 @@ notificationCtrl.addNotification = async ( req, res ) => {
     }
 };
 
-notificationCtrl.removeNotification = async ( req, res ) => {
+notificationCtrl.deleteNotification = async ( req, res ) => {
     try {
         const userId = req.params.userId;
         const notificationId = req.params.notificationId;
@@ -73,7 +73,7 @@ notificationCtrl.removeNotification = async ( req, res ) => {
     }
 }
 
-notificationCtrl.removeAllNotifications = async ( req, res ) => {
+notificationCtrl.deleteAllNotifications = async ( req, res ) => {
     try {
         const userId = req.params.userId;
         if ( !userId )
@@ -132,7 +132,7 @@ notificationCtrl.getNotification = async ( req, res ) => {
         const notification = await Notification.findById(notificationId).populate({
             path:'messageId',
             select: ['texto','senderId']
-        });;
+        });
 
         if ( !notification ) {
             return res.status( 200 ).json({

@@ -2,28 +2,28 @@ const { Router } = require( "express" );
 const router = Router( );
 
 const {
-    addMessage,
-    addNotification,
-    removeAllNotifications,
-    removeNotification,
+    createMessage,
+    createNotification,
+    deleteAllNotifications,
+    deleteNotification,
     getAllNotifications,
     getNotification 
 } = require( "../controllers/notification.controller" );
 
 router
     .route( '/notification' )
-    .post( addMessage, addNotification );
+    .post( createMessage, createNotification );
 router
-    .route( '/:userId/notification' )
-    .delete( removeAllNotifications );
+    .route( '/notification/:userId' )
+    .delete( deleteAllNotifications );
 router
-    .route( '/:userId/notification/:notificationId' )
-    .delete( removeNotification );
+    .route( '/notification/:userId/:notificationId' )
+    .delete( deleteNotification );
 router
-    .route( '/:userId/allnotification' )
+    .route( '/getAllNotifications/:userId' )
     .get( getAllNotifications );
 router
-    .route( '/:userId/notification/:notificationId' )
+    .route( '/notification/:userId/:notificationId' )
     .get( getNotification );
 
 module.exports = router;
