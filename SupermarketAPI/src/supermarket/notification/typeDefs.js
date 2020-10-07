@@ -2,7 +2,7 @@ export const notificationTypeDef = `
   type Notification {
       userId: Int!
       messageIid: Message!
-      date: Date!
+      date: String!
       content: String!
   }
   input NotificationInput {
