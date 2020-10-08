@@ -5,10 +5,10 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		getAllNotifications: (_,{ userid }) =>
-			generalRequest(`${URL}/${userid}`, 'GET'),
+		getAllNotifications: (_, { userId }) =>
+			generalRequest(`${URL}/${userId}`, 'GET'),
 		getNotification: (_, { userId, notId }) =>
-			generalRequest(`${URL}/${userId}/${notId}`, 'GET'),
+			generalRequest(`${URL}/${userId}/${notId}`, 'GET')
 	},
 	Mutation: {
 		createMessage: (_, { message }) =>
