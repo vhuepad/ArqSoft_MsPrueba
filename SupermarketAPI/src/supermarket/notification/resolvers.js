@@ -6,7 +6,7 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		getAllNotifications: (_,{ id }) =>
-			generalRequest(`${URL}/${id}`, ''),
+			generalRequest(`${URL}/${id}`, 'GET'),
 		getNotification: (_, { userId, notId }) =>
 			generalRequest(`${URL}/${userId}/${notId}`, 'GET'),
 	},

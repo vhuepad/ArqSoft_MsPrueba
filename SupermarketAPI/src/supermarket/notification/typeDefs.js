@@ -4,7 +4,6 @@ export const notificationTypeDef = `
       userId: Int!
       messageIid: Int!
       date: String!
-      content: String!
   }
   input NotificationInput {
       userId: Int!
@@ -26,7 +25,7 @@ export const messageTypeDef = `
   }`;
 
 export const notificationQueries = `
-      getAllNotifications(userId: Int!): Notification!
+      getAllNotifications(userId: Int!): [Notification]!
       getNotification(userId: Int!, notId: String!): Notification!
   `;
 
