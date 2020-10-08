@@ -27,12 +27,12 @@ export const messageTypeDef = `
 
 export const notificationQueries = `
       getAllNotifications(userId: Int!): Notification!
-      getNotification(userId: Int!, notId: Int!): Notification!
+      getNotification(userId: Int!, notId: string!): Notification!
   `;
 
 export const notificationMutations = `
     createMessage(message: MessageInput!): Message!
-    deleteNotification(userId: Int!, notId: Int!): Int
+    deleteNotification(userId: Int!, notId: String!): Int
     deleteAllNotifications(id: Int!): Int
 `;
 
