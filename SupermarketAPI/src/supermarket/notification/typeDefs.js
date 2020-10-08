@@ -13,7 +13,7 @@ export const notificationTypeDef = `
 
 export const messageTypeDef = `
   type Message {
-      id: String!
+      id: String
       userId: Int!
       texto: String!
       senderId: Int!
@@ -31,7 +31,7 @@ export const notificationQueries = `
 
 export const notificationMutations = `
     createMessage(message: MessageInput!): Message!
-    deleteNotification(userId: Int!, notId: String!): Int
-    deleteAllNotifications(id: Int!): Int
+    deleteNotification(userId: Int!, notId: String!): Int!
+    deleteAllNotifications(id: Int!): Int!
 `;
 
