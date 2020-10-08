@@ -1,13 +1,13 @@
 export const notificationTypeDef = `
   type Notification {
       userId: Int!
-      messageIid: Message!
+      messageIid: Int!
       date: String!
       content: String!
   }
   input NotificationInput {
       userId: Int!
-      messageIid: Message!
+      messageIid: Int!
       date: Date!
       content: String!
   }`;
@@ -20,9 +20,8 @@ export const messageTypeDef = `
   }
   input MessageInput {
       userId: Int!
-      messageIid: Message!
-      date: Date!
-      content: String!
+      texto: String!
+      senderId: Int!
   }`;
 
 export const notificationQueries = `
