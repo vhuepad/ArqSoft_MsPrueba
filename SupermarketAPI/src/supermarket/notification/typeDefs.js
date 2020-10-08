@@ -26,7 +26,7 @@ export const messageTypeDef = `
   }`;
 
 export const notificationQueries = `
-      getAllNotifications: [Notification]!
+      getAllNotifications(userId: Int!): Notification!
       getNotification(userId: Int!, notId: Int!): Notification!
   `;
 
