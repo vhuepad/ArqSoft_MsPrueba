@@ -27,7 +27,7 @@ export const messageTypeDef = `
 
 export const notificationQueries = `
       getAllNotifications: [Notification]!
-      getNoticacion(userId: Int!, notId: Int!): Notification!
+      getNotification(userId: Int!, notId: Int!): Notification!
   `;
 
 export const notificationMutations = `
@@ -35,3 +35,4 @@ export const notificationMutations = `
     deleteNotification(userId: Int!, notId: Int!): Int
     deleteAllNotification(id: Int!): Int
 `;
+
