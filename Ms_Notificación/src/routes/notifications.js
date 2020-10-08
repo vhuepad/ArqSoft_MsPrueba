@@ -20,7 +20,7 @@ router
     .route( '/notification/:userId/:notificationId' )
     .delete( deleteNotification );
 router
-    .route( '/getAllNotifications/:userId' )
+    .route( '/notification/:userId' )
     .get( getAllNotifications );
 router
     .route( '/notification/:userId/:notificationId' )
