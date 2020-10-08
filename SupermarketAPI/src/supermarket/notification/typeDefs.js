@@ -33,6 +33,6 @@ export const notificationQueries = `
 export const notificationMutations = `
     createMessage(message: MessageInput!): Message!
     deleteNotification(userId: Int!, notId: Int!): Int
-    deleteAllNotification(id: Int!): Int
+    deleteAllNotifications(id: Int!): Int
 `;
 
