@@ -2,7 +2,7 @@ export const notificationTypeDef = `
   type Notification {
       id: String!
       userId: Int!
-      messageId: int
+      messageId: Int
       conversationid: Int
       date: String!
       text: String!
@@ -10,7 +10,7 @@ export const notificationTypeDef = `
   }
   input NotificationInput {
       userId: Int!
-      messageIid: Int!
+      messageIid: Int
       conversationid: Int
       date: String!
       text: String!
