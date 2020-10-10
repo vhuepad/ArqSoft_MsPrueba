@@ -23,7 +23,7 @@ export const notificationQueries = `
   `;
 
 export const notificationMutations = `
-    createNotification(notification: NotificationInput!): Message!
+    createNotification(notification: NotificationInput!): Notification!
     deleteNotification(userId: Int!, notId: String!): Int!
     deleteAllNotifications(id: Int!): Int!
 `;
