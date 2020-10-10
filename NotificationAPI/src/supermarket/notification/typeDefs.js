@@ -1,5 +1,6 @@
 export const notificationTypeDef = `
     type Notification {
+      notId: String!
       userId: Int!
       conversationId: Int!
       date: String!
