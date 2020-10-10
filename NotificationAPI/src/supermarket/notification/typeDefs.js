@@ -1,27 +1,30 @@
 export const notificationTypeDef = `
-    type Notification {
-      notId: String!
+  type Notification {
+      id: String!
       userId: Int!
-      conversationId: Int!
+      messageId: int
+      conversationid: Int
       date: String!
-      message: String!
+      text: String!
       SenderId: Int!
   }
   input NotificationInput {
       userId: Int!
-      conversationId: Int!
-      message: String!
+      messageIid: Int!
+      conversationid: Int
+      date: String!
+      text: String!
       SenderId: Int!
   }`;
 
-
 export const notificationQueries = `
-      getAllNotifications: [Notification]!
-      getNotificacion(userId: Int!, notId: Int!): Notification!
+      getAllNotifications(userId: Int!): [Notification]!
+      getNotification(userId: Int!, notId: String!): Notification!
   `;
 
 export const notificationMutations = `
-    createMessage(notification: NotificationInput!): Notification!
-    deleteNotification(userId: Int!, notId: Int!): Int
-    deleteAllNotification(id: Int!): Int
+    createNotification(notification: NotificationInput!): Message!
+    deleteNotification(userId: Int!, notId: String!): Int!
+    deleteAllNotifications(id: Int!): Int!
 `;
+
