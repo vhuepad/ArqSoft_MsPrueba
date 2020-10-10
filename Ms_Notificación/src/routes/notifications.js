@@ -2,7 +2,6 @@ const { Router } = require( "express" );
 const router = Router( );
 
 const {
-    createMessage,
     createNotification,
     deleteAllNotifications,
     deleteNotification,
@@ -12,7 +11,7 @@ const {
 
 router
     .route( '/notification' )
-    .post( createMessage, createNotification );
+    .post( createNotification );
 router
     .route( '/notification/:userId' )
     .delete( deleteAllNotifications );
