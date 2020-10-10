@@ -11,8 +11,8 @@ const resolvers = {
 			generalRequest(`${URL}/${userId}/${notId}`, 'GET')
 	},
 	Mutation: {
-		createMessage: (_, { message }) =>
-			generalRequest(`${URL}`, 'POST', message),
+		createNotification: (_, { notification }) =>
+			generalRequest(`${URL}`, 'POST', notification),
 		deleteNotification: (_, { userId,notId }) =>
 			generalRequest(`${URL}/${userId}/${notId}`, 'DELETE'),
 		deleteAllNotifications: (_, { id }) =>
