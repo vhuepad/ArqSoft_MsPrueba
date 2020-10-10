@@ -17,7 +17,7 @@ export const notificationTypeDef = `
 
 export const notificationQueries = `
       getAllNotifications: [Notification]!
-      getNoticacion(userId: Int!, notId: Int!): Notification!
+      getNotificacion(userId: Int!, notId: Int!): Notification!
   `;
 
 export const notificationMutations = `
