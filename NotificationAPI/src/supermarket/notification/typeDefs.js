@@ -24,4 +24,4 @@ export const notificationMutations = `
     createNotification(notification: NotificationInput!): Notification!
     deleteNotification(userId: Int!, notId: String!): Notification
     deleteAllNotifications(id: Int!): Notification
-
+`;
