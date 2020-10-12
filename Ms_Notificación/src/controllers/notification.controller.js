@@ -12,6 +12,7 @@ notificationCtrl.createNotification = async ( req, res, next) => {
         const notification = new Notification( req.body );
         await notification.save();
         console.log(notification.id);
+        console.log(notification);
         return res.status( 201 ).json(notification);
     }catch ( err ) {
         if( !err.message ) {
