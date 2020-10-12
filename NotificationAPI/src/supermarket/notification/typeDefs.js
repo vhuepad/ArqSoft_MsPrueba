@@ -5,14 +5,13 @@ export const notificationTypeDef = `
       conversationid: Int!
       date: String!
       message: String!
-      SenderId: Int!
+      senderId: Int!
   }
   input NotificationInput {
       userId: Int!
       conversationid: Int!
-      date: String!
       message: String!
-      SenderId: Int!
+      senderId: Int!
   }`;
 
 export const notificationQueries = `
@@ -22,7 +21,7 @@ export const notificationQueries = `
 
 export const notificationMutations = `
     createNotification(notification: NotificationInput!): Notification!
-    deleteNotification(userId: Int!, notId: String!): String
-    deleteAllNotifications(id: Int!): String
+    deleteNotification(userId: Int!, notId: String!): Long
+    deleteAllNotifications(id: Int!): Long
 `;
 
