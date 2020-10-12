@@ -21,7 +21,7 @@ export const notificationQueries = `
 
 export const notificationMutations = `
     createNotification(notification: NotificationInput!): Notification!
-    deleteNotification(userId: Int!, notId: String!): Long
-    deleteAllNotifications(id: Int!): Long
+    deleteNotification(userId: Int!, notId: String!): String
+    deleteAllNotifications(id: Int!): String
 `;
 
