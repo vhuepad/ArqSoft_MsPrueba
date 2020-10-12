@@ -2,14 +2,14 @@ export const notificationTypeDef = `
   type Notification {
       _id: String!
       userId:Int!
-      conversationid: Int!
+      conversationId: Int!
       date: String!
       message: String!
       senderId: Int!
   }
   input NotificationInput {
       userId: Int!
-      conversationid: Int!
+      conversationId: Int!
       date: String
       message: String!
       senderId: Int!
