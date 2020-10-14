@@ -110,9 +110,8 @@ async function getNotification(userId, notId){
             message
             }
         }`;
-
-    opts["body"] = JSON.stringify({ query });
-    fetch(url_notification, opts)
+        
+    await fetch(url_notification, {method: 'POST',  headers:  { "Content-Type": "application/json"}, body:JSON.stringify({query})})
     .then(res => res.json())
     .then(data =>{
         console.log(data.data.getNotification);
@@ -150,7 +149,7 @@ async function deleteAllNotifications(userId){
             }`;
 
     opts["body"] = JSON.stringify({ query });
-    fetch(url_notification, opts)
+    await fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
         console.log(data.data.deleteNotifications);
@@ -166,4 +165,4 @@ async function deleteAllNotifications(userId){
 document.getElementById("getAllNotifications").onclick = function(){getAllNotifications(1)};
 document.getElementById("getNotification").onclick = function(){getNotification(1,"5f83c608f7a2ac0019847eb0")};
 document.getElementById("deleteNotification").onclick = function(){deleteNotification(3,"5f83ce4cf7a2ac0019847eb1")};
-document.getElementById("deleteNotifications").onclick = function(){deleteNotifications(3)};
+document.getElementById("deleteNotifications").onclick = function(){deleteAllNotifications(3)};
