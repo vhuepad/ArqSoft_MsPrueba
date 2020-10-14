@@ -104,7 +104,7 @@ async function getNotification(userId,notId){
     var notification;
     console.log(notId)
     var query =`query {
-            getNotification(userId: ${userId}, notId: ${notId}){
+            getNotification(userId: ${userId}, notId: "${notId}"){
                 _id
                 userId
                 date
