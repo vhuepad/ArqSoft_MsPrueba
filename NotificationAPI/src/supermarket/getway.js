@@ -112,7 +112,7 @@ async function getNotification(userId, notId){
         }`;
 
     opts["body"] = JSON.stringify({ query });
-    await fetch(url_notification, opts)
+    fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
         console.log(data.data.getNotification);
@@ -129,7 +129,7 @@ async function deleteNotification(userId, notId){
         }`;
 
     opts["body"] = JSON.stringify({ query });
-    await fetch(url_notification, opts)
+    fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
         console.log(data.data.deleteNotification);
@@ -150,7 +150,7 @@ async function deleteAllNotifications(userId){
             }`;
 
     opts["body"] = JSON.stringify({ query });
-    await fetch(url_notification, opts)
+    fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
         console.log(data.data.deleteNotifications);
