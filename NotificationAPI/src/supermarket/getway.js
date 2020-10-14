@@ -100,22 +100,23 @@ async function getAllNotifications(userId){
     return allnotifications;
 }
 
-function getNotification(userId, notId){
+async function getNotification(userId,notId){
     var notification;
     var query =`query {
-        getNotification(userId: ${userId}, notId: ${notId}){
-            _id
-            userId
-            date
-            message
-            }
-        }`;
+            getAllNotifications(userId: ${userId}){
+                _id
+                userId
+                date
+                message
+                }
+            }`;
 
-    fetch(url_notification, {method: 'POST',  headers:  { "Content-Type": "application/json"}, body:JSON.stringify({query})})
+    opts["body"] = JSON.stringify({ query });
+    await fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
-        console.log(data.data.getNotification);
-        notification = data.data.getNotification;
+        console.log(data.data.getAllNotifications);
+        notification = data.data.getAllNotifications;
     });
     return notification;
 }
