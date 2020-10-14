@@ -100,7 +100,7 @@ async function getAllNotifications(userId){
     return allnotifications;
 }
 
-async function getNotification(userId, notId){
+function getNotification(userId, notId){
     var notification;
     var query =`query {
         getNotification(userId: ${userId}, notId: ${notId}){
@@ -110,8 +110,8 @@ async function getNotification(userId, notId){
             message
             }
         }`;
-        
-    await fetch(url_notification, {method: 'POST',  headers:  { "Content-Type": "application/json"}, body:JSON.stringify({query})})
+
+    fetch(url_notification, {method: 'POST',  headers:  { "Content-Type": "application/json"}, body:JSON.stringify({query})})
     .then(res => res.json())
     .then(data =>{
         console.log(data.data.getNotification);
