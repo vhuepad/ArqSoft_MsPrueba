@@ -160,10 +160,10 @@ async function deleteAllNotifications(userId){
 }
 
 // Pruebas message
-document.getElementById("createMessage").onclick = function(){createMessage(2,12,"Hola 12")};
+//document.getElementById("createMessage").onclick = function(){createMessage(2,12,"Hola 12")};
 
 //pruebas notification
-document.getElementById("getAllNotifications").onclick = function(){createMessage(1)};
-document.getElementById("getNotification").onclick = function(){createMessage(1,)};
-document.getElementById("deleteNotification").onclick = function(){createMessage(2,12,"Hola 12")};
-document.getElementById("deleteNotifications").onclick = function(){createMessage(3)};
+document.getElementById("getAllNotifications").onclick = function(){getAllNotifications(1)};
+document.getElementById("getNotification").onclick = function(){getNotification(1,"5f83c608f7a2ac0019847eb0")};
+document.getElementById("deleteNotification").onclick = function(){deleteNotification(3,"5f83ce4cf7a2ac0019847eb1")};
+document.getElementById("deleteNotifications").onclick = function(){deleteNotifications(3)};
