@@ -103,7 +103,7 @@ async function getAllNotifications(userId){
 async function getNotification(userId,notId){
     var notification;
     var query =`query {
-            getAllNotifications(userId: ${userId}){
+            getNotification(userId: ${userId}, notId: ${notId}){
                 _id
                 userId
                 date
@@ -115,8 +115,8 @@ async function getNotification(userId,notId){
     await fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
-        console.log(data.data.getAllNotifications);
-        notification = data.data.getAllNotifications;
+        console.log(data.data.getNotification);
+        notification = data.data.getNotification;
     });
     return notification;
 }
