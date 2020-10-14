@@ -8,7 +8,7 @@ var opts = {
   };
 
 //_______________Message______________________
-
+/*
 async function createMessage(idUs,idConv,text){
     //Variable para guardar el destinatario
     var idDestinatario;
@@ -75,7 +75,7 @@ async function createMessage(idUs,idConv,text){
     .then(res => res.json())
     .then(data =>{console.log(data.data)});
     
-}
+}*/
 
 //_______________Notification______________________
 
