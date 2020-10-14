@@ -127,14 +127,15 @@ async function deleteNotification(userId, notId){
     var query =`mutation {
         deleteNotification(userId: ${userId}, notId: "${notId}"){
             message
+            }
         }`;
 
     opts["body"] = JSON.stringify({ query });
-    fetch(url_notification, opts)
+    await fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
-        console.log(data.data.deleteNotification);
-        message = data.data.deleteNotification;
+        console.log(data.data);
+        message = data.data;
     });
     return message;
 }
@@ -163,5 +164,5 @@ async function deleteAllNotifications(userId){
 //pruebas notification
 document.getElementById("getAllNotifications").onclick = function(){getAllNotifications(1)};
 document.getElementById("getNotification").onclick = function(){getNotification(1,"5f83c608f7a2ac0019847eb0")};
-document.getElementById("deleteNotification").onclick = function(){deleteNotification(3,"5f83ce4cf7a2ac0019847eb1")};
+document.getElementById("deleteNotification").onclick = function(){deleteNotification(3,"5f83ce9af7a2ac0019847eb2")};
 document.getElementById("deleteNotifications").onclick = function(){deleteAllNotifications(3)};
