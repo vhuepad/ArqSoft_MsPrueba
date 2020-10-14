@@ -125,7 +125,7 @@ async function getNotification(userId,notId){
 async function deleteNotification(userId, notId){
     var message;
     var query =`mutation {
-        deleteNotification(userId: ${userId}, notId: ${notId}){
+        deleteNotification(userId: ${userId}, notId: "${notId}"){
             message
         }`;
 
@@ -143,9 +143,6 @@ async function deleteAllNotifications(userId){
     var message;
     var query =`query {
             deleteNotifications(userId: ${userId}){
-                _id
-                userId
-                date
                 message
                 }
             }`;
