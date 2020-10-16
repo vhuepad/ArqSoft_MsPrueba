@@ -8,7 +8,7 @@ var opts = {
   };
 
 //_______________Message______________________
-/*
+
 async function createMessage(idUs,idConv,text){
     //Variable para guardar el destinatario
     var idDestinatario;
@@ -75,7 +75,7 @@ async function createMessage(idUs,idConv,text){
     .then(res => res.json())
     .then(data =>{console.log(data.data)});
     
-}*/
+}
 
 //_______________Notification______________________
 
@@ -134,15 +134,15 @@ async function deleteNotification(userId, notId){
     await fetch(url_notification, opts)
     .then(res => res.json())
     .then(data =>{
-        console.log(data.data);
-        message = data.data;
+        console.log(data.data.deleteNotification);
+        message = data.data.deleteNotification;
     });
     return message;
 }
 
 async function deleteAllNotifications(userId){
     var message;
-    var query =`query {
+    var query =`mutation {
             deleteNotifications(userId: ${userId}){
                 message
                 }
@@ -159,7 +159,7 @@ async function deleteAllNotifications(userId){
 }
 
 // Pruebas message
-//document.getElementById("createMessage").onclick = function(){createMessage(2,12,"Hola 12")};
+document.getElementById("createMessage").onclick = function(){createMessage(2,12,"Hola 12")};
 
 //pruebas notification
 document.getElementById("getAllNotifications").onclick = function(){getAllNotifications(1)};
